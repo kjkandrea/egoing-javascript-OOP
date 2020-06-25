@@ -53,3 +53,13 @@ var kim = new Person('andrea', 10, 20, 15)
 
 console.log(kim.scoreSum()) // 45
 ```
+
+**생성자 패턴으로 변경하였기 때문에 필요에 따라 객체를 다음과 같이 추가로 생성할 수 있다.**
+
+```
+var kim = new Person('andrea', 10, 20, 15)
+var lee = new Person('yusoo', 15, 25, 35)
+
+console.log(kim.scoreSum()) // 45
+console.log(lee.scoreSum()) // 75
+```

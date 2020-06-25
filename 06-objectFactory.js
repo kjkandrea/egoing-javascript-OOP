@@ -17,5 +17,7 @@
 }
 
 var kim = new Person('andrea', 10, 20, 15)
+var lee = new Person('yusoo', 15, 25, 35)
 
 console.log(kim.scoreSum()) // 45
+console.log(lee.scoreSum()) // 75
