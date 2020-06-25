@@ -28,5 +28,16 @@ function scoreSum() {
 };
 
 /* call */
+console.group('call()')
 console.log(scoreSum.call(kim)) // 45
 console.log(scoreSum.call(lee)) // 75
+console.groupEnd()
+
+/* bind */
+var kimScoreSum = scoreSum.bind(kim)
+var leeScoreSum = scoreSum.bind(lee)
+
+console.group('bind()')
+console.log(kimScoreSum()) // 45
+console.log(leeScoreSum()) // 75
+console.groupEnd()

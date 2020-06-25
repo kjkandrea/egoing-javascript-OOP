@@ -133,6 +133,12 @@ console.log(lee.scoreSum()) // 75
 console.log(lee.scoreAvg()) // 75
 ```
 
+## 외부 함수를 메소드와 같이 다루기
+
+외부 함수의 `this`를 변경하여 객체의 메소드와 같이 다룰 수 있는 방법이 있다.
+
+[10-objectFunction.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/10-objectFunction.js)
+
 ### call() 로 외부함수를 메소드 취급하기
 
 [10-objectFunction.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/10-objectFunction.js)
@@ -184,3 +190,24 @@ console.log(scoreSum.call(lee)) // 75
 두번째 인자부터는 `scoreSum()` 함수의 인자 값을 넘겨준다.
 
 > `func.call(thisArg[, arg1[, arg2[, ...]]])`
+
+### bind() 로 외부함수를 객체의 메소드로 새롭게 생성하기
+
+`bind()` 메소드가 호출되면 새로운 함수를 생성한다.
+
+`call()` 과 동일하게 다음과 같이 인자를 받는다.
+
+> `func.bind(thisArg[, arg1[, arg2[, ...]]])`
+
+다음과 같이 사용할 수 있다.
+
+``` javascript
+... // 위는 동일
+
+/* bind */
+var kimScoreSum = scoreSum.bind(kim)
+var leeScoreSum = scoreSum.bind(lee)
+
+console.log(kimScoreSum()) // 45
+console.log(leeScoreSum()) // 75
+```
