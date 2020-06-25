@@ -14,6 +14,6 @@
 
 ## Part 3. 클래스 문법
 
-[JavaScript 객체 지향 프로그래밍 - 8.1. Classes](https://www.youtube.com/watch?v=cmcx88U7xBE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=13) 부터
+[JavaScript 객체 지향 프로그래밍 - 8.1. Classes](https://www.youtube.com/watch?v=cmcx88U7xBE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=13) 부터 [JavaScript 객체 지향 프로그래밍 - 12. super](https://www.youtube.com/watch?v=Qx0YKJj3ySo&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=18) 까지
 
-**[03-class 필기 노트 바로가기](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/note/03-class.md)**
+**[03-class 필기 노트 바로가기](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/note/03-class.md)** 

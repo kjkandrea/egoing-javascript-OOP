@@ -1,6 +1,6 @@
 # Part 3. 클래스 문법
 
-[JavaScript 객체 지향 프로그래밍 - 8.1. Classes](https://www.youtube.com/watch?v=cmcx88U7xBE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=13) 부터
+[JavaScript 객체 지향 프로그래밍 - 8.1. Classes](https://www.youtube.com/watch?v=cmcx88U7xBE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=13) 부터 [JavaScript 객체 지향 프로그래밍 - 12. super](https://www.youtube.com/watch?v=Qx0YKJj3ySo&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=18) 까지
 
 ## class
 
