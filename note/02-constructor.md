@@ -110,3 +110,35 @@ console.log(lee.scoreSum()) // 75
 ```
 
 일반적으로 변수는 생성자 자체에 담고, 함수는 prototype에 담는다.
+
+#### scoreSum을 재정의하여 사용하기
+
+prototype 메소드와 다른 동작을 원할 경우 다음처럼 `scoreSum` 메소드를 재 지정해버릴 수 있다.
+
+scoreSum 메소드가 숫자 자료형을 인자로 받아 이를 최종결과에 더하도록 수정해보았다.
+
+``` javascript
+... // Person, Person.prototype은 기존과 동일
+
+var kim = new Person('andrea', 10, 20, 15)
+
+kim.scoreSum = function (advantage) {
+  var val = 0;
+
+  for (var name in this.score) {
+    if (typeof(this.score[name]) === 'number')
+      val += this.score[name]
+  }
+
+  if (typeof(advantage) === 'number') {
+    return val + advantage;
+  }
+  
+  return val;
+}
+
+var lee = new Person('yusoo', 15, 25, 35)
+
+console.log(kim.scoreSum(35)) // 80
+console.log(lee.scoreSum()) // 75
+```
