@@ -61,3 +61,36 @@ var kim = new Person('andrea', 10, 20, 15)
 
 console.log(kim) // Person { name: 'andrea', first: 10, second: 20, third: 15 }
 ```
+
+### 메소드 만들기
+
+#### 1. prototype 사용할 수 있다.
+
+함수형 객체 생성 모델과 동일하게 `prototype`을 통해 메소드를 생성할 수 있다.
+
+``` javascript 
+class Person {
+  constructor(name, first, second, third) {
+    this.name = name;
+    this.score = {};
+    this.score.first = first;
+    this.score.second = second;
+    this.score.third = third;
+  }
+}
+
+Person.prototype.scoreSum = function() {
+  var val = 0;
+
+  for (var name in this.score) {
+    if (typeof(this.score[name]) === 'number')
+      val += this.score[name]
+  }
+  
+  return val;
+}
+
+var kim = new Person('andrea', 10, 20, 15)
+
+console.log(kim.scoreSum()) // 45
+```
