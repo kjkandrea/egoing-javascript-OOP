@@ -12,7 +12,7 @@ JavaScript class는 ECMAScript 2015을 통해 소개되었으며, 기존 prototy
 
 다음과 같은 문법으로 객체를 생성할 수 있다.
 
-```
+``` javascript
 class Person {
   
 }
@@ -31,7 +31,8 @@ console.log(kim) // Person {}
 * constructor 메서드는 자동으로 호출 된다.
 
 다음과 같이 `constructor`에 `console.log`를 적어놓으면 `kim.constructor()` 형식으로 호출하지 않아도 실행되는것을 볼 수 있다.
-```
+
+``` javascript
 class Person {
   constructor() {
     console.log('안녕. 나는 constructor야.')
@@ -40,4 +41,23 @@ class Person {
 
 var kim = new Person()
 // 안녕. 나는 constructor야.
+```
+
+#### constructor에 인자를 주어 객체 만들기
+
+2단원의 생성자 함수와 유사하게 constructor에서 인자를 받아 프로퍼티들을 생성할 수 있다.
+
+``` javascript
+class Person {
+  constructor(name, first, second, third) {
+    this.name = name;
+    this.first = first;
+    this.second = second;
+    this.third = third;
+  }
+}
+
+var kim = new Person('andrea', 10, 20, 15)
+
+console.log(kim) // Person { name: 'andrea', first: 10, second: 20, third: 15 }
 ```
