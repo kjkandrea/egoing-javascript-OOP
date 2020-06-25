@@ -16,10 +16,3 @@ console.log(memberObject.designer);
 // 객체 제거(Delete)
 delete memberObject.developer
 console.log(memberObject);
-
-
-var Obj = { 
-  callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name
-}
-
-console.log(Obj.callMeByYourName('karenin')) // haebogoyang
