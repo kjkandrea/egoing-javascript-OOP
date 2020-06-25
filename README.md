@@ -74,3 +74,34 @@ const Obj = {
 
 console.log(Obj.callMeByYourName('karenin')) // haebogoyang
 ```
+
+## 객체와 반목문
+
+[03-objectLoop.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/03-objectLoop.js)
+
+### Question
+
+> 반복문으로 memberObject 객체의 키와 값을 모두 출력해보세요.
+
+```
+var memberObject = {
+  manager : 'haebogoyang',
+  developer : 'karenin',
+  designer : 'mummu'
+}
+```
+
+### Answer
+
+for in 문을 사용하여 배열처럼 루프를 돌릴 수 있다.
+
+```
+for(var name in memberObject) {
+  console.log(name, memberObject[name])
+}
+
+// manager haebogoyang
+// developer karenin
+// designer mummu
+```
+
