@@ -1,4 +1,4 @@
-var Obj = { 
+const Obj = { 
   callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name
 }
 
