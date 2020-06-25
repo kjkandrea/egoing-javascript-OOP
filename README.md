@@ -12,7 +12,7 @@
 
 manager, developer, designer로 구성된 객체를 생성한다.
 
-```
+``` javascript
 var memberObject = {
   manager : 'haebogoyang',
   developer : 'karenin',
@@ -24,11 +24,11 @@ var memberObject = {
 
 마침표와 대괄호 두 가지 접근이 가능하다.
 
-```
+``` javascript
 console.log(memberObject.designer); // mummu
 ```
 
-```
+``` javascript
 console.log(memberObject['designer']); // mummu
 ```
 
@@ -36,7 +36,7 @@ console.log(memberObject['designer']); // mummu
 
 해당 객체의 *키*를 선택하여 *값*을 변경한다.
 
-```
+``` javascript
 memberObject.designer = 'stone cold';
 console.log(memberObject.designer); // stone cold
 ```
@@ -45,7 +45,7 @@ console.log(memberObject.designer); // stone cold
 
 객체의 속성을 제거하기 위한 `delete` 연산자를 사용한다.
 
-```
+``` javascript
 delete memberObject.manager
 console.log(memberObject);
 // { manager: 'haebogoyang', designer: 'stone cold' }
@@ -66,7 +66,7 @@ console.log(memberObject);
 
 [02-objectMethod.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/02-objectMethod.js)
 
-```
+``` javascript
 const Obj = {
   callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name // 프로퍼티
   // 키               // 메소드 (값)
@@ -83,7 +83,7 @@ console.log(Obj.callMeByYourName('karenin')) // haebogoyang
 
 > 반복문으로 memberObject 객체의 키와 값을 모두 출력해보세요.
 
-```
+``` javascript
 var memberObject = {
   manager : 'haebogoyang',
   developer : 'karenin',
@@ -95,7 +95,7 @@ var memberObject = {
 
 for in 문을 사용하여 배열처럼 루프를 돌릴 수 있다.
 
-```
+``` javascript
 for(var name in memberObject) {
   console.log(name, memberObject[name])
 }
@@ -115,7 +115,7 @@ for(var name in memberObject) {
 
 ### Answer
 
-```
+``` javascript
 var MyMath = {
   PI : Math.PI,
   random : function () {
@@ -126,7 +126,7 @@ var MyMath = {
   }
 }
 ```
-```
+``` javascript
 console.log(MyMath.PI); // 3.141592653589793
 console.log(MyMath.floor(MyMath.random() * 10) + 1); // 6
 ```
@@ -142,7 +142,7 @@ console.log(MyMath.floor(MyMath.random() * 10) + 1); // 6
 
 메소드에서의 this는 메소드가 포함된 객체를 가르킨다.
 
-```
+``` javascript
 var Obj = {
   context: function(){
     console.log(this === Obj) // true
@@ -160,7 +160,7 @@ Obj.depth.context();
 
 이를 이용하여 객체 내부의 메소드에서 `this`를 사용하여 객체를 가르키는 방식으로 구현할 수 있다.
 
-```
+``` javascript
 var kim = {
   name: 'andrea',
   score : {
@@ -185,7 +185,7 @@ console.log(kim.scoreSum()) // 45
 
 or 
 
-```
+``` javascript
 function scoreSum() {
   var val = 0;
 
