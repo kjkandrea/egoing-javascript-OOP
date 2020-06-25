@@ -2,15 +2,15 @@ var superObj = {
   superVal : 'super'
 }
 
-var subObj = {
-  subVal: 'sub'
-}
+// superObj를 부모로 하는 객체 만들기
+var subObj = Object.create(superObj);
+subObj.subVal = 'sub';
 
-subObj.__proto__ = superObj
+console.log(subObj.subVal) // sub
+console.log(subObj.superVal) // super
+subObj.superVal = 'sub';
 
-console.log('1-1',subObj.subVal) // sub
-console.log('1-2',subObj.superVal) // super
-subObj.superVal = 'sub'
-console.log('2-1',subObj.superVal) // sub
-console.log('2-2',superObj.superVal) // super
-console.log('2-3',subObj) // { subVal: 'sub', superVal: 'sub' }
+console.log(subObj.superVal) // sub
+console.log(superObj.superVal) // super
+
+console.log(subObj.__proto__ === superObj) // true

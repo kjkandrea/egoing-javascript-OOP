@@ -2,7 +2,6 @@
 
 [JavaScript 객체 지향 프로그래밍 - 13.1. object inheritance](https://www.youtube.com/watch?v=339RrPTZTEU&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=19) 부터
 
-
 ## 객체 간의 상속
 
 ### __proto__
@@ -57,3 +56,35 @@ console.log('2-1',subObj.superVal) // sub
 console.log('2-2',superObj.superVal) // super
 ```
 
+### Object.create()
+
+[09-prototypeInheritance.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/09-prototypeInheritance.js)
+
+`Object.create()` 메서드는 지정된 프로토타입 객체 및 속성(property)을 갖는 새 객체를 만든다. 위의 `__proto__` 대신 사용할 수 있다.
+
+다음과 같이 사용한다.
+
+``` javascript
+var superObj = {
+  superVal : 'super'
+}
+
+// superObj를 부모로 하는 객체 만들기
+var subObj = Object.create(superObj);
+subObj.subVal = 'sub';
+
+console.log(subObj.subVal) // sub
+console.log(subObj.superVal) // super
+subObj.superVal = 'sub';
+
+console.log(subObj.superVal) // sub
+console.log(superObj.superVal) // super
+```
+
+### etc
+
+다음과 같이 콘솔을 출력하면 `true` 가 나온다.
+
+``` javascript
+console.log(subObj.__proto__ === superObj) // true
+```
