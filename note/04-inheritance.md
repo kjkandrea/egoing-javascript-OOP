@@ -132,3 +132,55 @@ console.log(kim.scoreSum()) // 45
 console.log(lee.scoreSum()) // 75
 console.log(lee.scoreAvg()) // 75
 ```
+
+### call() 로 외부함수를 메소드 취급하기
+
+[10-objectFunction.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/10-objectFunction.js)
+
+`call()`을 통해 객체 외부에 있는 함수를 객체 내부의 메소드로 취급 할 수 있다.
+
+다음과 같은 2개의 객체 `kim, lee`와 함수 `scoreSum` 이 존재할때...
+
+``` javascript
+var kim = {
+  name: 'andrea',
+  score: {
+    first: 10, 
+    second: 20,
+    third: 15
+  },
+}
+
+var lee = {
+  name: 'yusoo',
+  score: {
+    first: 15, 
+    second: 25,
+    third: 35
+  },
+}
+
+function scoreSum() {
+  var val = 0;
+
+  for (var name in this.score) {
+    if (typeof(this.score[name]) === 'number')
+      val += this.score[name]
+  }
+  
+  return val;
+};
+```
+
+`scoreSum.call()` 을 사용하여 다음과 같이 `scoreSum()` 을 객체 내부의 메소드로 취급하여 호출할 수 있다.
+
+``` javascript
+console.log(scoreSum.call(kim)) // 45
+console.log(scoreSum.call(lee)) // 75
+```
+
+`scoreSum.call()`의 첫번째 인자 (위와 같은경우 객체) 로는 `scoreSum()` 내부의 `this`를 무엇으로 정할지를 받는다.
+
+두번째 인자부터는 `scoreSum()` 함수의 인자 값을 넘겨준다.
+
+> `func.call(thisArg[, arg1[, arg2[, ...]]])`
