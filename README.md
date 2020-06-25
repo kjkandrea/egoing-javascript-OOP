@@ -4,7 +4,7 @@
 
 > 서로 연관된 변수와 함수를 그룹핑해서 이름을 붙인 것
 
-## 객체 CRUD 
+## 01 : 객체 CRUD 
 
 [01-objectCRUD.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/01-objectCRUD.js)
 
@@ -51,7 +51,7 @@ console.log(memberObject);
 // { manager: 'haebogoyang', designer: 'stone cold' }
 ```
 
-## 용어 정리
+## 02 : 용어 정리
 
 ### 객체 (Object)
 
@@ -75,7 +75,7 @@ const Obj = {
 console.log(Obj.callMeByYourName('karenin')) // haebogoyang
 ```
 
-## 객체와 반목문
+## 03 : 객체와 반목문
 
 [03-objectLoop.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/03-objectLoop.js)
 
@@ -105,3 +105,33 @@ for(var name in memberObject) {
 // designer mummu
 ```
 
+## 04 : 내장 객체 Math로 MyMath 만들어보기
+
+[04-builtIn.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/04-builtIn.js)
+
+### Question
+
+> Math.PI, Math.random, Math.floor와 동일한 역할을 하는 MyMath 객체를 만들어 보세요.
+
+### Answer
+
+```
+var MyMath = {
+  PI : Math.PI,
+  random : function () {
+    return Math.random();
+  },
+  floor : function (val) {
+    return Math.floor(val);
+  }
+}
+```
+```
+console.log(MyMath.PI); // 3.141592653589793
+console.log(MyMath.floor(MyMath.random() * 10) + 1); // 6
+```
+
+객체는 서로 연관된 변수와 함수들을 객체라는것에 그룹핑하여 이름을 붙인것이다. 일종의 디렉토리 역할을 한다.
+
+* 각 함수들의 이름이 충돌하는것을 방지
+* 객체라는 수납상자에 관련함수들을 깔끔하게 정리정돈
