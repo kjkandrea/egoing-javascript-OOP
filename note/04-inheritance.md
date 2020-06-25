@@ -7,6 +7,8 @@
 
 ### __proto__
 
+[09-prototypeInheritance.js : old version](https://github.com/kjkandrea/egoing-javascript-OOP/blob/b364f767956bafa1f2c6c4b7d7898d7977f5a728/09-prototypeInheritance.js)
+
 > ⚠️ `__proto__` 은 표준이 아니다. ECMAScript의 스펙 [[Prototype]] 이 자바스크립트로 노출된 것인데 예전 스펙이 레거시 처럼 남아있는 것이다. 
 
 해당 문서내에서는 프로토타입(`prototype`)과 명칭이 햇갈려 *프로토*(`__proto__`) 라고 부르기로 한다.
