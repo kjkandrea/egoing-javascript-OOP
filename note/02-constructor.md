@@ -1,6 +1,6 @@
 # Part 2. 객체 생성자
 
-[JavaScript 객체지향 프로그래밍 - 6.1. constructor의 필요성](https://www.youtube.com/watch?v=cTR00wW-kZo&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=8) 부터
+[JavaScript 객체지향 프로그래밍 - 6.1. constructor의 필요성](https://www.youtube.com/watch?v=cTR00wW-kZo&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=8) 부터 [JavaScript 객체지향 프로그래밍 - 7.2. prototype을 이용해서 재사용성을 높이기](https://www.youtube.com/watch?v=7uL0xiFBlJI&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=12) 까지
 
 ## 생성자 (constructor)
 
@@ -27,6 +27,8 @@ for(var car in car1){
 ```
 
 #### new 연산자를 이용해 리팩토링
+
+[06-objectFactory.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/06-objectFactory.js)
 
 `Person`이라는 함수를 만들어 `05-this.js`의 `kim` 객체를 리팩토링 하여보자.
 
@@ -75,6 +77,8 @@ console.log(lee.scoreSum()) // 75
 prototype 을 이용하면 new 를 이용해 새로운 객체를 찍어낼 때 마다 같은 동작을 하는 객체의 속성 값 (여기서는 함수) 를 생성하는 것이 비효율적으로 반복되는 것을 막을 수 있다. **성능 향상과 메모리 절약**
 
 #### prototype을 이용해 리팩토링
+
+[07-prototype.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/07-prototype.js)
 
 prototype을 이용하여 `scoreSum` 함수를 다음과 같이 분리해 낼 수 있다.
 
