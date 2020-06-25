@@ -135,3 +135,77 @@ console.log(MyMath.floor(MyMath.random() * 10) + 1); // 6
 
 * 각 함수들의 이름이 충돌하는것을 방지
 * 객체라는 수납상자에 관련함수들을 깔끔하게 정리정돈
+
+## 객체에서의 this
+
+[05-this.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/05-this.js)
+
+메소드에서의 this는 메소드가 포함된 객체를 가르킨다.
+
+```
+var Obj = {
+  context: function(){
+    console.log(this === Obj) // true
+  },
+  depth : {
+    context: function(){
+      console.log(this === Obj.depth) // true
+    }
+  }
+}
+
+Obj.context();
+Obj.depth.context();
+```
+
+이를 이용하여 객체 내부의 메소드에서 `this`를 사용하여 객체를 가르키는 방식으로 구현할 수 있다.
+
+```
+var kim = {
+  name: 'andrea',
+  score : {
+    first: 10,
+    second: 20,
+    third: 15
+  },
+  scoreSum: function() {
+    var val = 0;
+
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+    }
+    
+    return val;
+  }
+}
+
+console.log(kim.scoreSum()) // 45
+```
+
+or 
+
+```
+function scoreSum() {
+  var val = 0;
+
+  for (var name in this.score) {
+    if (typeof(this.score[name]) === 'number')
+      val += this.score[name]
+  }
+  
+  return val;
+}
+
+var kim = {
+  name: 'andrea',
+  score : {
+    first: 10,
+    second: 20,
+    third: 15
+  },
+  scoreSum: scoreSum
+}
+
+console.log(kim.scoreSum()) // 45
+```
