@@ -48,3 +48,25 @@ delete memberObject.manager
 console.log(memberObject);
 // { manager: 'haebogoyang', designer: 'stone cold' }
 ```
+
+## 용어 정리
+
+### 객체 (Object)
+
+객체는 키(key)와 값(value)으로 구성된 프로퍼티(Property)들의 집합이다.
+
+* 자바스크립트의 함수는 일급 객체임으로 값으로 취급될 수 있다.
+* 프로퍼티의 *값*이 함수일 경우 일반함수와 구분하기 위해 이를 *메소드(Method)*라 부른다.
+
+객체는 데이터(프로퍼티)와 그와 관련되는 메소드로 구성된 집합이다. 이를 *객체*라는 상위개념으로 포괄할 수 있기때문에 데이터와 동작을 하나의 단위로 구조화 할 수 있어 유용하다.
+
+#### 프로퍼티, 키, 값
+
+```
+var Obj = {
+  callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name // 프로퍼티
+  // 키               // 값
+} // 객체
+
+console.log(Obj.callMeByYourName('karenin')) // haebogoyang
+```

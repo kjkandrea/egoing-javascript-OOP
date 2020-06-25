@@ -5,14 +5,21 @@ var memberObject = {
   designer : 'mummu'
 }
 
-// 객체 읽기(Read) : 마침표와 대괄호로 접근 가능
-console.log(memberObject.designer);
-console.log(memberObject['designer']);
+// // 객체 읽기(Read) : 마침표와 대괄호로 접근 가능
+// console.log(memberObject.designer);
+// console.log(memberObject['designer']);
 
-// 객체 수정(Update)
-memberObject.designer = 'stone cold';
-console.log(memberObject.designer);
+// // 객체 수정(Update)
+// memberObject.designer = 'stone cold';
+// console.log(memberObject.designer);
 
-// 객체 제거(Delete)
-delete memberObject.developer
-console.log(memberObject);
+// // 객체 제거(Delete)
+// delete memberObject.developer
+// console.log(memberObject);
+
+
+var Obj = { 
+  callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name
+}
+
+console.log(Obj.callMeByYourName('karenin')) // soojin
