@@ -1,16 +1,35 @@
-var superObj = {
-  superVal : 'super'
+var kim = {
+  name: 'andrea',
+  score: {
+    first: 10, 
+    second: 20,
+    third: 15
+  },
+  scoreSum() {
+    var val = 0;
+  
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+    }
+    
+    return val;
+  }
 }
 
-// superObj를 부모로 하는 객체 만들기
-var subObj = Object.create(superObj);
-subObj.subVal = 'sub';
+var lee = Object.create(kim);
 
-console.log(subObj.subVal) // sub
-console.log(subObj.superVal) // super
-subObj.superVal = 'sub';
+lee.name = 'lee';
+lee.score = {}
+lee.score.first = 15,
+lee.score.second = 25,
+lee.score.third = 35,
+lee.scoreAvg = function(){
+  var howMany = Object.keys(this.score).length;
 
-console.log(subObj.superVal) // sub
-console.log(superObj.superVal) // super
+  return this.scoreSum()/howMany;
+}
 
-console.log(subObj.__proto__ === superObj) // true
+console.log(kim.scoreSum()) // 45
+console.log(lee.scoreSum()) // 75
+console.log(lee.scoreAvg()) // 75
