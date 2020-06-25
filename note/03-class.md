@@ -125,3 +125,38 @@ var kim = new Person('andrea', 10, 20, 15)
 
 console.log(kim.scoreSum()) // 45
 ```
+
+### class 상속 (Inheritance)
+
+`Person` 클래스 생성자에 메소드를 더하거나 하고싶을때에 `Person` 클래스 내부가 아닌 외부에서 기능을 추가하여 확장(extends)할 수 있는 방법은 없을까?
+
+#### extends
+
+`extends`를 사용하여 다음과 같이 `PersonPlus`를 만들어 기능을 **확장(extends)** 시킬 수 있다.
+
+* `Person` 생성자의 원형을 그대로 상속받는다.
+* `Person` 를 우아하게 확장할 수 있다.
+
+``` javascript 
+... // Person은 생략
+
+class PersonPlus extends Person {
+  scoreAvg() {
+    var val = 0;
+    var howMany = 0;
+  
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+        howMany += 1;
+    }
+    
+    return val/howMany;
+  }
+}
+
+var kim = new PersonPlus('andrea', 10, 20, 15)
+
+console.log(kim.scoreSum()) // 45
+console.log(kim.scoreAvg()) // 15
+```

@@ -19,6 +19,22 @@ class Person {
   }
 }
 
-var kim = new Person('andrea', 10, 20, 15)
+class PersonPlus extends Person {
+  scoreAvg() {
+    var val = 0;
+    var howMany = 0;
+  
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+        howMany += 1;
+    }
+    
+    return val/howMany;
+  }
+}
+
+var kim = new PersonPlus('andrea', 10, 20, 15)
 
 console.log(kim.scoreSum()) // 45
+console.log(kim.scoreAvg()) // 15
