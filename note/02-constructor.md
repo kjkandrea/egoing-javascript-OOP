@@ -63,3 +63,46 @@ var lee = new Person('yusoo', 15, 25, 35)
 console.log(kim.scoreSum()) // 45
 console.log(lee.scoreSum()) // 75
 ```
+
+### 프로토타입 (prototype)
+
+#### 프로토타입 이란?
+
+객체들이 공통으로 사용하는 속성값
+
+#### prototype의 이점
+
+prototype 을 이용하면 new 를 이용해 새로운 객체를 찍어낼 때 마다 같은 동작을 하는 객체의 속성 값 (여기서는 함수) 를 생성하는 것이 비효율적으로 반복되는 것을 막을 수 있다. **성능 향상과 메모리 절약**
+
+#### prototype을 이용해 리팩토링
+
+prototype을 이용하여 `scoreSum` 함수를 다음과 같이 분리해 낼 수 있다.
+
+``` javascript
+ function Person(name, first, second, third) {
+  this.name = name;
+  this.score = {};
+  this.score.first = first;
+  this.score.second = second;
+  this.score.third = third;
+}
+
+Person.prototype.scoreSum = function() {
+  var val = 0;
+
+  for (var name in this.score) {
+    if (typeof(this.score[name]) === 'number')
+      val += this.score[name]
+  }
+  
+  return val;
+}
+
+var kim = new Person('andrea', 10, 20, 15)
+var lee = new Person('yusoo', 15, 25, 35)
+
+console.log(kim.scoreSum()) // 45
+console.log(lee.scoreSum()) // 75
+```
+
+일반적으로 변수는 생성자 자체에 담고, 함수는 prototype에 담는다.
