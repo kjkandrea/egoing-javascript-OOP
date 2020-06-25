@@ -160,3 +160,87 @@ var kim = new PersonPlus('andrea', 10, 20, 15)
 console.log(kim.scoreSum()) // 45
 console.log(kim.scoreAvg()) // 15
 ```
+
+#### super
+
+부모 class의 유산을 상속받아 확장하고자 할때 super를 이용하여 상속받을 수 있다. 
+
+##### construtor 를 super로 확장하기
+
+`score`의 네번째, 다섯번째 값을 받고자 할 때 다음과 같이 `super`를 사용하여 확장할 수 있다.
+
+``` javascript
+... // Person은 생략
+
+class PersonPlus extends Person {
+  constructor(name, first, second, third, fourth, fifth) {
+    super(name, first, second, third)
+    this.score.fourth = fourth;
+    this.score.fifth = fifth;
+  }
+
+  scoreAvg() {
+    var val = 0;
+    var howMany = 0;
+  
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+        howMany += 1;
+    }
+    
+    return val/howMany;
+  }
+}
+
+var kim = new PersonPlus('andrea', 10, 20, 15, 25, 35)
+
+console.log(kim.scoreSum()) // 105
+console.log(kim.scoreAvg()) // 21
+```
+
+### 메소드의 return값을 super로 상속받기
+
+`Person` 클래스 생성자의 `scoreSum` 메소드의 값을 상속받아 다음과 같이 사용할 수 있다.
+
+``` javascript
+class Person {
+  constructor(name, first, second, third) {
+    this.name = name;
+    this.score = {};
+    this.score.first = first;
+    this.score.second = second;
+    this.score.third = third;
+  }
+
+  scoreSum() {
+    var val = 0;
+  
+    for (var name in this.score) {
+      if (typeof(this.score[name]) === 'number')
+        val += this.score[name]
+    }
+    
+    return val;
+  }
+}
+
+class PersonPlus extends Person {
+  constructor(name, first, second, third, fourth, fifth) {
+    super(name, first, second, third)
+    this.score.fourth = fourth;
+    this.score.fifth = fifth;
+  }
+
+  scoreAvg() {
+    var howMany = Object.keys(this.score).length;
+
+    return super.scoreSum()/howMany; // scoreSum() 에 대한 결과를 받아 score 키의 갯수만큼 나누어 평균을 도출
+  }
+}
+
+var kim = new PersonPlus('andrea', 10, 20, 15, 25, 35)
+
+console.log(kim.scoreSum()) // 105
+console.log(kim.scoreAvg()) // 21
+```
