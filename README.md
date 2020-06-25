@@ -60,12 +60,12 @@ console.log(memberObject);
 
 객체는 데이터(프로퍼티)와 그와 관련되는 메소드로 구성된 집합이다. 이를 *객체*라는 상위개념으로 포괄할 수 있기때문에 데이터와 동작을 하나의 단위로 구조화 할 수 있어 유용하다.
 
-#### 프로퍼티, 키, 값
+#### 프로퍼티, 키, 메소드 (값)
 
 ```
 var Obj = {
   callMeByYourName : (name) => name === 'karenin' ? 'haebogoyang' : name // 프로퍼티
-  // 키               // 값
+  // 키               // 메소드 (값)
 } // 객체
 
 console.log(Obj.callMeByYourName('karenin')) // haebogoyang
