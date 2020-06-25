@@ -199,7 +199,7 @@ console.log(kim.scoreSum()) // 105
 console.log(kim.scoreAvg()) // 21
 ```
 
-### 메소드의 return값을 super로 상속받기
+##### 메소드의 return값을 super로 상속받기
 
 `Person` 클래스 생성자의 `scoreSum` 메소드의 값을 상속받아 다음과 같이 사용할 수 있다.
 
