@@ -211,3 +211,39 @@ var leeScoreSum = scoreSum.bind(lee)
 console.log(kimScoreSum()) // 45
 console.log(leeScoreSum()) // 75
 ```
+
+## 객체 생성자 패턴에서의 super역할을 하는 call()
+
+[11-constructorInheritance.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/11-constructorInheritance.js)
+
+### call()로 프로퍼티 상속 받기
+
+`call()`을 이용하여 부모 생성자의 프로퍼티들을 상속하여보자.
+첫번째 인자를 무엇으로 받는지 상기하며 작성하자.
+
+> `scoreSum.call()`의 첫번째 인자 (위와 같은경우 객체) 로는 `scoreSum()` 내부의 `this`를 무엇으로 정할지를 받는다.
+
+``` javascript
+function Person(name, first, second) {
+  this.name = name;
+  this.score = {
+    first : first,
+    second : second
+  };
+}
+
+function PersonPlus(name, first, second, third) {
+  Person.call(this, name, first, second) // 첫번째 인자를 this로 넘겨 받음
+  this.score.third = third;
+}
+
+var lee = new PersonPlus('yusoo', 20, 25, 35)
+console.log(lee)
+
+/*
+ * PersonPlus {
+ *   name: 'yusoo',
+ *   score: { first: 20, second: 25, third: 35 }
+ *  }
+ */ 
+```
