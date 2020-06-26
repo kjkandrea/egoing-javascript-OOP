@@ -212,7 +212,7 @@ console.log(kimScoreSum()) // 45
 console.log(leeScoreSum()) // 75
 ```
 
-## 객체 생성자 패턴에서의 super역할을 하는 call()
+### 객체 생성자 패턴에서의 super역할을 하는 call()
 
 [11-constructorInheritance.js](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/11-constructorInheritance.js)
 
@@ -246,4 +246,50 @@ console.log(lee)
  *   score: { first: 20, second: 25, third: 35 }
  *  }
  */ 
+```
+
+### create로 메소드 상속받기
+
+`PersonPlus.prototype`에 원본의 프로토타입을 연결 한다.(`Person.prototype`)
+
+``` javascript
+... // 위는 동일
+
+function PersonPlus(name, first, second, third) {
+  Person.call(this, name, first, second)
+  this.score.third = third;
+}
+
+PersonPlus.prototype = Object.create(Person.prototype);
+
+var lee = new PersonPlus('yusoo', 20, 25, 35)
+console.log(lee.scoreSum()) // 80
+```
+
+이제 `PersonPlus`의 메소드 내에서도 `scoreSum()` 을 쓸 수 있다.
+
+``` javascript
+... // 위는 동일
+
+PersonPlus.prototype.scoreAvg = function(){
+  var howMany = Object.keys(this.score).length;
+
+  return this.scoreSum()/howMany
+}
+
+var lee = new PersonPlus('yusoo', 20, 25, 35)
+console.log(lee.scoreAvg()) // 2.6666...
+
+```
+
+#### __proto__
+
+아래의 코드는 동일한 의미를 지닌다. 
+
+``` javascript
+PersonPlus.prototype = Object.create(Person.prototype);
+```
+
+``` javascript 
+PersonPlus.prototype.__proto__ = Person.prototype;
 ```

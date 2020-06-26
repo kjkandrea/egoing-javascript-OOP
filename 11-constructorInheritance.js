@@ -20,12 +20,17 @@ function PersonPlus(name, first, second, third) {
   this.score.third = third;
 }
 
-PersonPlus.scoreAvg = function(){
-  
+//PersonPlus.prototype.__proto__ = Person.prototype;
+PersonPlus.prototype = Object.create(Person.prototype);
+
+PersonPlus.prototype.scoreAvg = function(){
+  var howMany = Object.keys(this.score).length;
+
+  return this.scoreSum()/howMany
 }
 
 var kim = new Person('andrea', 15, 25)
 console.log(kim.scoreSum())
 
 var lee = new PersonPlus('yusoo', 20, 25, 35)
-console.log(lee.scoreSum())
+console.log(lee.scoreAvg())
