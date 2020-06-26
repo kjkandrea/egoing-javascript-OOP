@@ -20,8 +20,8 @@ function PersonPlus(name, first, second, third) {
   this.score.third = third;
 }
 
-//PersonPlus.prototype.__proto__ = Person.prototype;
 PersonPlus.prototype = Object.create(Person.prototype);
+PersonPlus.prototype.constructor = PersonPlus
 
 PersonPlus.prototype.scoreAvg = function(){
   var howMany = Object.keys(this.score).length;
@@ -34,3 +34,6 @@ console.log(kim.scoreSum())
 
 var lee = new PersonPlus('yusoo', 20, 25, 35)
 console.log(lee.scoreAvg())
+
+console.log(kim.constructor)
+console.log(lee.constructor) // [Function: PersonPlus]

@@ -305,3 +305,56 @@ console.log(d.constructor) // ƒ Date() { [native code] }
 ```
 
 변수 `d`를 생성한 부모는 Date() 라는것을 알게 되었습니다.
+
+### 이를 응용하여 kim과 lee의 constructor 를 찾아보자
+
+다음과 같이 객체 kim의 `constructor`를 추적해보면 무엇이 나올까?
+
+``` javascript
+... // 위는 동일
+
+var kim = new Person('andrea', 15, 25)
+console.log(kim.constructor) // ?
+```
+
+추론대로 `[Function: Person]` 이 나오는것을 볼 수 있다.
+그럼 `PersonPlus`로 생성된 객체 lee의 `constructor`는 무엇이 나올까?
+
+``` javascript
+... // 위는 동일
+
+var lee = new PersonPlus('yusoo', 20, 25, 35)
+console.log(lee.constructor) // ?
+```
+
+`PersonPlus` 가 나올것이라고 생각하는가?
+
+``` javascript
+console.log(lee.constructor) // [Function: Person]
+```
+
+`lee.constructor` 는 `Person` 이다. 왜 이런 결과가 나올까?
+
+1. `lee`는 `PersonPlus`로 생성된 객체이다.
+2. `Person`을 `PersonPlus`가 상속할때 다음과 같은 코드를 사용하였다. `PersonPlus.prototype = Object.create(Person.prototype);`
+3. `PersonPlus.prototype`이 Person의 prototype을 상속받았기에 `[Function: Person]`이 출력되는 것이다.
+
+`lee.constructor`가 `PersonPlus`를 가르키고자 한다면 다음과 같이 `constructor`를 강제지정 해줄 수 있다.
+
+``` javascript
+function PersonPlus(name, first, second, third) {
+  Person.call(this, name, first, second)
+  this.score.third = third;
+}
+
+PersonPlus.prototype = Object.create(Person.prototype);
+PersonPlus.prototype.constructor = PersonPlus
+```
+
+`PersonPlus.prototype.constructor = PersonPlus` 이후 다음과 같이 `constructor`를 추적하면 `PersonPlus`를 가르키는것을 볼 수 있다.
+
+``` javascript
+var lee = new PersonPlus('yusoo', 20, 25, 35)
+
+console.log(lee.constructor) // [Function: PersonPlus]
+```
