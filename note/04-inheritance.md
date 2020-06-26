@@ -358,3 +358,8 @@ var lee = new PersonPlus('yusoo', 20, 25, 35)
 
 console.log(lee.constructor) // [Function: PersonPlus]
 ```
+
+## 객체를 다루는것이 어찌나 복잡한 지
+
+위와 같이 javascript에서 객체 생성자를 통해 객체를 다루고, 상속받는 패턴은 상당한 복잡성을 지닌다. 이러한 패턴들보다는 `class`를 사용하는 편이 유지보수 시 이해하기 쉬운 코드를 만들어낼 수 있을것이다.
+
