@@ -1,5 +1,16 @@
 # 필기 노트
 
+## 학습 방법
+
+단원 별로 `.js` 파일을 생성하여 nodejs로 실행한다.
+
+```
+// 실행 예
+node 01-objectCRUD.js
+```
+
+debugger 기능이 필요할 경우 `index.html`파일을 통해 브라우저에서 실행한다.
+
 ## Part 1. 객체 기본
 
 [JavaScript 객체 지향 프로그래밍 - 1. 수업소개](https://www.youtube.com/watch?v=DHIlPmJUDzk&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=1) 부터 [JavaScript 객체지향 프로그래밍 - 5. this](https://www.youtube.com/watch?v=-LWOv0PlcRA&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=7) 까지
