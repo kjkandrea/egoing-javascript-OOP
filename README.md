@@ -23,3 +23,7 @@
 [JavaScript 객체 지향 프로그래밍 - 13.1. object inheritance](https://www.youtube.com/watch?v=339RrPTZTEU&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=19) 부터 [JavaScript 객체 지향 프로그래밍 -17. 수업을 마치며](https://www.youtube.com/watch?v=D7YYXxS1nvE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=32) 까지
 
 **[04-inheritance 필기 노트 바로가기](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/note/04-inheritance.md)**
+
+## 객체를 통해 본 javascript 함수
+
+**[05-function 필기 노트 바로가기](https://github.com/kjkandrea/egoing-javascript-OOP/blob/master/note/05-function.md)**
