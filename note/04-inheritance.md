@@ -293,3 +293,15 @@ PersonPlus.prototype = Object.create(Person.prototype);
 ``` javascript 
 PersonPlus.prototype.__proto__ = Person.prototype;
 ```
+
+### constructor() 로 객체의 부모(객체 생성자) 찾아내기
+
+다음과 같이 constructor를 통해 해당 객체를 생성한 부모를 찾아낼 수 있다.
+
+``` javascript
+var d = new Date()
+
+console.log(d.constructor) // ƒ Date() { [native code] }
+```
+
+변수 `d`를 생성한 부모는 Date() 라는것을 알게 되었습니다.
