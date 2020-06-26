@@ -1,6 +1,6 @@
 # Part 4. 상속
 
-[JavaScript 객체 지향 프로그래밍 - 13.1. object inheritance](https://www.youtube.com/watch?v=339RrPTZTEU&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=19) 부터
+[JavaScript 객체 지향 프로그래밍 - 13.1. object inheritance](https://www.youtube.com/watch?v=339RrPTZTEU&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=19) 부터 [JavaScript 객체 지향 프로그래밍 -17. 수업을 마치며](https://www.youtube.com/watch?v=D7YYXxS1nvE&list=PLuHgQVnccGMAMctarDlPyv6upFUUnpSO3&index=32) 까지
 
 ## 객체 간의 상속
 
